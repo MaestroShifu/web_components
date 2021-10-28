@@ -1,0 +1,20 @@
+{
+  "name": "my-personal-web-component",
+  "version": "1.0.0",
+  "description": "Web component",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc --init",
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "MaestroShifu",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^2.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
