@@ -4,7 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development', // development - production - none
     entry: {
-        web_component: path.join(__dirname, 'src', 'index.ts'),
+        index: path.join(__dirname, 'src', 'index.ts'),
+        // web_component: path.join(__dirname, 'src', 'components', 'web-component', 'web-component.ts'),
+        // google_maps: path.join(__dirname, 'src', 'components', 'google-maps', 'google-maps.ts')
     },
     output: {
         path:path.resolve(__dirname, 'dist'),
@@ -31,7 +33,7 @@ module.exports = {
                   options: {
                     minify: true, // defaults to false
                   },
-                }, 'extract-loader', 'style-loader', 'css-loader', 'sass-loader'],
+                }, 'extract-loader', 'css-loader', 'sass-loader'],
             },
             { 
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,

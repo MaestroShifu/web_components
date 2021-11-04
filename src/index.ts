@@ -1,11 +1,5 @@
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+// Import polyfills
+import '@webcomponents/webcomponentsjs';
 
-@customElement('my-element')
-export class MyElement extends LitElement {
-    render() {
-        return html`
-            <h1>Funciona gonorrea!! hp!!</h1>
-        `;
-    }
-}
+export { WebComponent } from './components/web-component/web-component';
+export { GoogleMaps } from './components/google-maps/google-maps';
