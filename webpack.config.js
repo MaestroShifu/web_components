@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -13,6 +14,10 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.js'],
+        fallback: {
+            stream: require.resolve('stream-browserify'),
+            buffer: require.resolve('buffer')
+        }
     },
     module: {
         rules: [
@@ -38,12 +43,18 @@ module.exports = {
             { 
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
                 use: ['file-loader'] 
-            },
+            }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.html'),
+        }),
+        new webpack.ProvidePlugin({
+            Buffer: ['buffer', 'Buffer'],
+        }),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
         }),
     ],
 };
